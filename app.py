@@ -1,13 +1,26 @@
 import numpy as np
 from flask import Flask, request, jsonify, render_template
 import pickle
+import mysql.connector
+from mysql.connector import errorcode
+from flask_mysqldb import MySQL
+
+
 
 app = Flask(__name__)
+app.config['MYSSQL_HOST']='localhost'
+app.config['MYSSQL_USER']='root'
+app.config['MYSSQL_PASSWORD']=''
+app.config['MYSSQL_DB']='banque_bd'
+
+mysql=MySQL(app)
+
+
 model = pickle.load(open('model4.pkl', 'rb'))
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    return render_template('index1.html')
 
 @app.route('/predict',methods=['POST'])
 def predict():
@@ -20,7 +33,7 @@ def predict():
 
     output = round(prediction[0], 2)
 
-    return render_template('index.html', prediction_text='La Prédiction est : $ {}'.format(output))
+    return render_template('index1.html', prediction_text='La Prédiction est : $ {}'.format(output))
 
 # @app.route('/predict_api',methods=['POST'])
 # def predict_api():

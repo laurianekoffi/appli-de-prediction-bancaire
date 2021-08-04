@@ -1,0 +1,177 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>BANKCARD</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="static/assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="static/assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Sidebar -->
+			<section id="sidebar">
+				<div class="inner">
+					<nav>
+						<ul>
+							<li><a href="#intro">Welcome</a></li>
+							<li><a href="#one">QU'EST CE C'EST</a></li>
+							<li><a href="#two">PREDICTION multiple</a></li>
+							<li><a href="#three">PREDICTION Individuelle</a></li>
+						</ul>
+					</nav>
+				</div>
+			</section>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Intro -->
+					<section id="intro" class="wrapper style1 fullscreen fade-up">
+						<div class="inner">
+							<h1>Welcome</h1>
+							<p>BIENVENUE SUR LE SITE BANKCARD LE SITE DE PREDICTION DE CLIENT POUR LA BANQUE</p>
+							<ul class="actions">
+								<li><a href="#one" class="button scrolly">Learn more</a></li>
+							</ul>
+						</div>
+					</section>
+
+				<!-- One -->
+					<section id="one" class="wrapper style2 spotlights">
+						<section>
+							<a href="#" class="image"><img src="/images/pic01.jpg" alt="" data-position="center center" /></a>
+							<div class="content">
+								<div class="inner">
+									<h2>BANKCARD</h2>
+									<p>BANKCARD  est une application capable de prédire les 
+										départs des clients du services
+										de carte de crédit</p> 
+										<p>Vous avez la possibilité de faire une prédiction Individuelle ou une prédiction multiple </p>
+									
+								</div>
+							</div>
+						</section>
+						<section>
+							<a href="#" class="image"><img src="images/pic02.jpg" alt="" data-position="top center" /></a>
+							<div class="content">
+								<div class="inner">
+									<h2>Prédiction Individuelle</h2>
+									<p>Pour une prédiction individuelle </p>
+									<ul class="actions">
+										<li><a href="#three" class="button">cliquez ici</a></li>
+									</ul>
+								</div>
+							</div>
+						</section>
+						<section>
+							<a href="#" class="image"><img src="images/pic03.jpg" alt="" data-position="25% 25%" /></a>
+							<div class="content">
+								<div class="inner">
+									<h2>Prédiction multiple</h2>
+									<p>Pour une prédiction multiple </p>
+									<ul class="actions">
+										<li><a href="#two" class="button">cliquez ici</a></li>
+									</ul>
+								</div>
+							</div>
+						</section>
+					</section>
+
+				<!-- Two -->
+					<section id="two" class="wrapper style3 fade-up">
+						<div class="inner">
+							<h2>PREDICTION MULTIPLE</h2>
+							<p>Le but de PREDICTION MULTIPLE est de prédire le départ de plusieurs clients</p>
+							<div class="features">
+								
+								<table>
+									<tr>
+									  <td>MT TRANSACTION</td>
+									  <td>NT TRANSACTION</td>
+									  <td>SRT SUR CARTE DE CREDIT</td>
+									  <td>CHANGEMENT DU NOMBRE DE TRANSACTION</td>
+									  <td>PERIODE DE RELATION AVEC LA BANQUE</td>
+									  <td>UTILISATION DE LA CARTE</td>
+									  <td>INACTIVITE AU COURS DES 12 DERNIER MOIS</td>
+									  <td>ATTRITION_FLAG</td>
+									  <td>PREDICTION</td>
+									  
+									  
+									</tr>
+									<!-- <tr>
+									  <td>Giraud</td>
+									  <td>Pierre</td>
+									  <td>28</td>
+									  <td>pierre.giraud@edhec.com</td>
+									  <td>Giraud</td>
+									  <td>Pierre</td>
+									  <td>28</td>
+									  <td>pierre.giraud@edhec.com</td>
+									  <td>Giraud</td>
+									  <td>Pierre</td>
+									  <td>28</td>
+									  <td>pierre.giraud@edhec.com</td>
+									</tr> -->
+									
+								  </table>
+							</div>
+							<ul class="actions">
+								<li><a href="generic.html" class="button">Learn more</a></li>
+							</ul>
+						</div>
+					</section>
+
+				<!-- Three -->
+					<section id="three" class="wrapper style1 fade-up">
+						<div class="inner">
+							<h2>PREDICTION Individuelle</h2>
+							<p> Le but de PREDICTION Individuelle est de prédire le départ d'un seul client</p>
+							<div class="split style1">
+								
+
+								
+									<form action="{{ url_for('predict')}}"method="post">
+										<input type="number" name="MT TRANSACTION" placeholder="MT TRANSACTION" required="required" />
+										<input type="number" name="NT TRANSACTION" placeholder="NT TRANSACTION " required="required" />
+										<input type="number" name="SRT SUR CARTE DE CREDIT" placeholder="SRT SUR CARTE DE CREDIT" required="required" />
+										<input type="number" name="CHANGEMENT DU NOMBRE DE TRANSACTION" placeholder="CHANGEMENT DU NOMBRE DE TRANSACTION" required="required" />
+										<input type="number" name="PERIODE DE RELATION AVEC LA BANQUE" placeholder="PERIODE DE RELATION AVEC LA BANQUE " required="required" />
+										<input type="number" name="UTILISATION DE LA CARTE" placeholder="UTILISATION DE LA CARTE" required="required" />
+										<input type="number" name="INACTIVITE AU COURS DES 12 DERNIER MOIS" placeholder="INACTIVITE AU COURS DES 12 DERNIER MOIS" required="required" />
+								
+										<button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+									</form>
+								
+								   <br>
+								   <br>
+								   {{ prediction_text }}
+								
+							
+							</div>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper style1-alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; LAURIANE KOFFI.</li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="static/assets/js/jquery.min.js"></script>
+			<script src="staticassets/js/jquery.scrollex.min.js"></script>
+			<script src="static/assets/js/jquery.scrolly.min.js"></script>
+			<script src="static/assets/js/browser.min.js"></script>
+			<script src="static/assets/js/breakpoints.min.js"></script>
+			<script src="static/assets/js/util.js"></script>
+			<script src="static/assets/js/main.js"></script>
+
+	</body>
+</html>
